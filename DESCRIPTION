@@ -1,0 +1,35 @@
+Package: forexengine
+Title: Signal Engine for a Multi-Timeframe Trading System
+Version: 0.0.0.9000
+Authors@R: 
+    person("Lekgoa", "Komane", , "lionel.komane@gmail.com", role = c("aut", "cre"))
+Description: Applies institutional mapping and structural analysis to
+    price data and a supplied configuration list, producing signals and
+    analysis tables for downstream use. Data acquisition and configuration
+    loading are handled by the companion 'forexdatasets' package and
+    composed with this package in a 'targets' pipeline.
+License: MIT + file LICENSE
+Imports: 
+    arrow,
+    data.table,
+    DBI,
+    IncDTW,
+    logger,
+    lubridate,
+    Rcpp,
+    rlang,
+    roll,
+    RSQLite,
+    tidyselect,
+    utils,
+    zoo
+Suggests: 
+    forexdatasets,
+    testthat (>= 3.0.0),
+    withr
+LinkingTo: 
+    Rcpp
+Config/roxygen2/version: 8.1.1
+Config/testthat/edition: 3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
