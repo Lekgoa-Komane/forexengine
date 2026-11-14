@@ -299,17 +299,20 @@ institutional_mapping <- function(dt, config) {
   # ============================================================================
   # 1. INPUT VALIDATION & SETUP
   # ============================================================================
+  time_frame <- unique(dt$timeframe)
+
   allowed <- c("Currency_Pairs", "Metals")
   bad <- setdiff(unique(dt$asset_class), allowed)
   if (length(bad) > 0) {
     stop(
-      "institutional_mapping got unsupported asset classes: ",
+      paste0(
+        time_frame,
+        "_data institutional_mapping got unsupported asset classes: "
+      ),
       paste(bad, collapse = ", "),
       call. = FALSE
     )
   }
-
-  time_frame <- unique(dt$timeframe)
 
   # 1. Store the dynamic name string in a variable
   registry <- paste0(time_frame, "_registry")
